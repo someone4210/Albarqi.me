@@ -157,13 +157,16 @@
       html { scroll-padding-top: 72px; }
       .shell { width: min(calc(100% - 2rem), var(--content)); }
       .nav-wrap { min-height: 68px; }
-      .menu-toggle { display: inline-flex; align-items: center; gap: .4rem; }
-      .nav-links {
-        display: none; position: absolute; inset: 68px 0 auto; padding: .7rem 1rem 1rem;
+      .nav-wrap { flex-wrap: wrap; }
+      .menu-toggle { display: none; }
+      .nav-links { width: 100%; display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: .7rem 0 1rem; }
+      body.js .menu-toggle { display: inline-flex; align-items: center; gap: .4rem; }
+      body.js .nav-links {
+        display: none; position: absolute; top: 68px; left: -1rem; right: -1rem; width: auto; padding: .7rem 1rem 1rem;
         flex-direction: column; align-items: stretch; gap: 0; background: var(--paper);
         border-bottom: 1px solid var(--line); box-shadow: 0 12px 18px rgb(24 33 31 / 8%);
       }
-      .nav-links.is-open { display: flex; }
+      body.js .nav-links.is-open { display: flex; }
       .nav-links a { display: block; padding: .8rem .35rem; }
       .nav-links .nav-contact { margin-top: .35rem; padding: .7rem .8rem; }
       .hero { min-height: 540px; }
@@ -216,7 +219,7 @@
         <p class="eyebrow">Clinical operations · Saudi Arabia</p>
         <h1 id="hero-title">Mousa<br>Albarqi</h1>
         <p class="hero-summary">Clinical operations professional with experience across trial execution, study oversight, team leadership and country-level CRO operations.</p>
-        <div class="current-role" aria-label="Current position">
+        <div class="current-role" role="group" aria-label="Current position">
           <strong>Clinical Operations Manager – FSP Line Manager</strong>
           <span>Thermo Fisher Scientific (PPD)</span>
           <span>December 2026 – Present</span>
@@ -362,7 +365,7 @@
           </div>
           <div>
             <h3>Languages</h3>
-            <div class="languages" aria-label="Languages spoken">
+            <div class="languages" role="group" aria-label="Languages spoken">
               <span class="language">Arabic · Native or bilingual</span>
               <span class="language">English · Full professional</span>
             </div>
