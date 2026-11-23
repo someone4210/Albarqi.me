@@ -72,7 +72,7 @@
       position: sticky; top: 0; z-index: 20; background: rgb(244 242 236 / 94%);
       border-bottom: 1px solid rgb(24 33 31 / 9%); backdrop-filter: blur(12px);
     }
-    .nav-wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nav-wrap { position: relative; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
     .brand { display: inline-flex; gap: .7rem; align-items: center; text-decoration: none; font-weight: 700; letter-spacing: .04em; }
     .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; color: var(--white); background: var(--forest); border-radius: 50%; font-family: var(--serif); font-size: 1.05rem; }
     .nav-links { display: flex; gap: clamp(1.1rem, 3vw, 2.3rem); align-items: center; list-style: none; margin: 0; padding: 0; }
@@ -157,12 +157,12 @@
       html { scroll-padding-top: 72px; }
       .shell { width: min(calc(100% - 2rem), var(--content)); }
       .nav-wrap { min-height: 68px; }
-      .nav-wrap { flex-wrap: wrap; }
+      .nav-wrap { flex-wrap: wrap; }\n      .nav-wrap > nav { flex-basis: 100%; }
       .menu-toggle { display: none; }
       .nav-links { width: 100%; display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: .7rem 0 1rem; }
       body.js .menu-toggle { display: inline-flex; align-items: center; gap: .4rem; }
       body.js .nav-links {
-        display: none; position: absolute; top: 68px; left: -1rem; right: -1rem; width: auto; padding: .7rem 1rem 1rem;
+        display: none; position: absolute; top: 68px; left: 0; right: 0; width: auto; padding: .7rem 1rem 1rem;
         flex-direction: column; align-items: stretch; gap: 0; background: var(--paper);
         border-bottom: 1px solid var(--line); box-shadow: 0 12px 18px rgb(24 33 31 / 8%);
       }
